@@ -117,7 +117,7 @@ export const headerData = {
     {
       text: 'About',
       href: '/about',
-    }
+    },
   ],
   actions: [{ text: 'Contact', href: '/#contact' }],
 };

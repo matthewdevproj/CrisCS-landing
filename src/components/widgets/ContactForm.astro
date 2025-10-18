@@ -2,37 +2,31 @@
 import Form from '~/components/ui/Form.astro';
 
 const inputs = [
-    { name: 'name', label: 'Nombre', type: 'name', placeholder: 'Tu nombre completo' },
-    { name: 'email', label: 'Correo electrónico', type: 'email', placeholder: 'tu@correo.com' },
+  { name: 'name', label: 'Nombre', type: 'name', placeholder: 'Tu nombre completo' },
+  { name: 'email', label: 'Correo electrónico', type: 'email', placeholder: 'tu@correo.com' },
 ];
 
 const textarea = {
-    label: 'Mensaje',
-    placeholder: 'Escribe tu mensaje aquí...',
-    rows: 5,
+  label: 'Mensaje',
+  placeholder: 'Escribe tu mensaje aquí...',
+  rows: 5,
 };
 
 const disclaimer = {
-    label: 'He leído y acepto la política de privacidad.',
+  label: 'He leído y acepto la política de privacidad.',
 };
 ---
 
 <section id="contact" class="pb-20 bg-base-200 scroll-mt-20">
-    <div class="container mx-auto max-w-3xl text-center">
-        <h2 class="text-2xl font-bold mb-2">Contáctanos</h2>
-        <p class="text-sm mb-5 text-muted">
-        Déjanos un mensaje y te responderemos pronto.
-        </p>
-        <div class="flex flex-col text-start max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
-            <Form
-            inputs={inputs}
-            textarea={textarea}
-            disclaimer={disclaimer}
-            button="Enviar mensaje"
-            description=""
-            />
-        </div>    
+  <div class="container mx-auto max-w-3xl text-center">
+    <h2 class="text-2xl font-bold mb-2">Contáctanos</h2>
+    <p class="text-sm mb-5 text-muted">Déjanos un mensaje y te responderemos pronto.</p>
+    <div
+      class="flex flex-col text-start max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full"
+    >
+      <Form inputs={inputs} textarea={textarea} disclaimer={disclaimer} button="Enviar mensaje" description="" />
     </div>
+  </div>
 </section>
 
 <!-- Formato Yamhil -->

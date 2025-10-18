@@ -4,7 +4,7 @@ import typographyPlugin from '@tailwindcss/typography';
 import flowbitePlugin from 'flowbite/plugin';
 
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}','node_modules/flowbite/**/*.js'],
+  content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}', 'node_modules/flowbite/**/*.js'],
   theme: {
     extend: {
       colors: {

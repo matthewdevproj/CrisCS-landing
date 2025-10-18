@@ -300,4 +300,5 @@ Initially created by **Arthelokyo** and maintained by a community of [contributo
 ## License
 
 **AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+
 # CrisCS-landing git init git add README.md git commit -m first commit git branch -M main git remote add origin https://github.com/matthewdevproj/CrisCS-landing.git git push -u origin main

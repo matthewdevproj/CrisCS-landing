@@ -21,13 +21,13 @@ const metadata = {
       alt: 'Caos Image',
     }}
   >
-    <Fragment slot="title">
-      Everything starts with an idea.
-    </Fragment>
+    <Fragment slot="title"> Everything starts with an idea. </Fragment>
 
     <Fragment slot="subtitle">
-      At CRIS Construction Services, we know how important your home is. That’s why we take care of everything — from bathroom, kitchen, and drainpipe repairs to painting, flooring, patios, and more.
-      Our team works with professionalism and attention to detail to make sure every project turns out just the way you imagined. No matter the size of the job: if you need it, we’ll do it — and we’ll do it right.
+      At CRIS Construction Services, we know how important your home is. That’s why we take care of everything — from
+      bathroom, kitchen, and drainpipe repairs to painting, flooring, patios, and more. Our team works with
+      professionalism and attention to detail to make sure every project turns out just the way you imagined. No matter
+      the size of the job: if you need it, we’ll do it — and we’ll do it right.
     </Fragment>
   </Hero>
 
@@ -200,46 +200,58 @@ const metadata = {
         description: '3456 Lorem Ipsum St, 34567, São Paulo',
       },
     ]}
-  />  
+  />
   <!-- Carousel de Proyectos -->
   <section class="text-center my-10 w-full items-center">
-    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-      Our Projects
-    </h2>
-    <div 
-      id="projects-carousel" 
-      class="relative w-1/2 mx-auto" 
-      data-carousel="slide">
+    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Our Projects</h2>
+    <div id="projects-carousel" class="relative w-1/2 mx-auto" data-carousel="slide">
       <!-- Carousel wrapper -->
       <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
         <!-- Item 1 -->
-        <div 
-          class="hidden duration-700 ease-in-out bg-[#030620]" data-carousel-item>
-          <img src="/images/Landing-Carousel-1.jpeg" class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-700 ease-in-out bg-[#030620]" data-carousel-item>
+          <img
+            src="/images/Landing-Carousel-1.jpeg"
+            class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="..."
+          />
         </div>
         <!-- Item 2 -->
-        <div 
-          class="hidden duration-700 ease-in-out bg-[#030620]" 
-          data-carousel-item>
-          <img src="/images/Landing-Carousel-2.jpeg" class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-700 ease-in-out bg-[#030620]" data-carousel-item>
+          <img
+            src="/images/Landing-Carousel-2.jpeg"
+            class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="..."
+          />
         </div>
         <!-- Item 3 -->
-        <div 
-          class="hidden duration-700 ease-in-out bg-[#030620]" 
-          data-carousel-item>
-          <img src="/images/Landing-Carousel-3.jpeg" class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-700 ease-in-out bg-[#030620]" data-carousel-item>
+          <img
+            src="/images/Landing-Carousel-3.jpeg"
+            class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="..."
+          />
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out bg-[#030620]" data-carousel-item>
-          <img src="/images/Landing-Carousel-4.jpeg" class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          <img
+            src="/images/Landing-Carousel-4.jpeg"
+            class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="..."
+          />
         </div>
         <!-- Item 5 -->
         <div class="hidden duration-700 ease-in-out bg-[#030620]" data-carousel-item="active">
-          <img src="/images/Landing-Carousel-5.jpeg" class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          <img
+            src="/images/Landing-Carousel-5.jpeg"
+            class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="..."
+          />
         </div>
       </div>
       <!-- Slider indicators -->
-      <div class="absolute z-30 flex items-center justify-center -translate-x-1/2 bottom-5 left-1/2 px-4 py-2 space-x-3 bg-gray-800/50 rounded-lg shadow-md backdrop-blur-sm rtl:space-x-reverse">
+      <div
+        class="absolute z-30 flex items-center justify-center -translate-x-1/2 bottom-5 left-1/2 px-4 py-2 space-x-3 bg-gray-800/50 rounded-lg shadow-md backdrop-blur-sm rtl:space-x-reverse"
+      >
         <!-- Background "slots" for indicator positions -->
         <div class="absolute inset-0 flex items-center justify-center space-x-3">
           <div class="w-3 h-3 bg-gray-400/30 rounded-full"></div>
@@ -249,57 +261,81 @@ const metadata = {
           <div class="w-3 h-3 bg-gray-400/30 rounded-full"></div>
         </div>
         <div class="relative flex space-x-3 left-[128px] -translate-x-full">
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="true"
+            aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 2"
+            data-carousel-slide-to="1"></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 3"
+            data-carousel-slide-to="2"></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 4"
+            data-carousel-slide-to="3"></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 5"
+            data-carousel-slide-to="4"></button>
         </div>
       </div>
       <!-- Slider controls -->
-      <button 
-        type="button" 
+      <button
+        type="button"
         class="absolute top-1/2 left-4 z-30 flex items-center justify-center w-10 h-10
         -translate-y-1/2 cursor-pointer rounded-full bg-gray-800/50 shadow-md
-        backdrop-blur-sm transition duration-300 hover:bg-gray-700/70 focus:outline-none" 
-        data-carousel-prev>
-        <span 
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white-50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none hover:scale-105 transition-transform">
-          <svg 
-            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 6 10">
-            <path 
-              stroke="currentColor" 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M5 1 1 5l4 4"/>
+        backdrop-blur-sm transition duration-300 hover:bg-gray-700/70 focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white-50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none hover:scale-105 transition-transform"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"
+            ></path>
           </svg>
           <span class="sr-only">Previous</span>
         </span>
       </button>
-      <button 
-        type="button" 
+      <button
+        type="button"
         class="absolute top-1/2 right-4 z-30 flex items-center justify-center w-10 h-10
         -translate-y-1/2 cursor-pointer rounded-full bg-gray-800/50 shadow-md
-        backdrop-blur-sm duration-300 hover:bg-gray-700/70 focus:outline-none hover:scale-105 transition-transform" 
-        data-carousel-next>
-        <span 
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white-50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg 
-            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" 
-            aria-hidden="true" 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 6 10">
-            <path 
-              stroke="currentColor" 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="m1 9 4-4-4-4"/>
+        backdrop-blur-sm duration-300 hover:bg-gray-700/70 focus:outline-none hover:scale-105 transition-transform"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white-50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"
+            ></path>
           </svg>
           <span class="sr-only">Next</span>
         </span>
@@ -307,5 +343,4 @@ const metadata = {
     </div>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
   </section>
-
 </Layout>
