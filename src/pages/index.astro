@@ -11,6 +11,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContactForm from '~/components/widgets/ContactForm.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -396,4 +397,15 @@ const metadata = {
       waste more time! :P
     </Fragment>
   </CallToAction>
+  <ContactForm>
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contáctanos',
+        href: 'https://outlook.com/?mailto:pusaicocordovay@hotmal.com',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  </ContactForm>
 </Layout>

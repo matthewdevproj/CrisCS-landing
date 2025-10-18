@@ -114,8 +114,12 @@ export const headerData = {
       text: 'Widgets',
       href: '#',
     },
+    {
+      text: 'About',
+      href: '/about',
+    }
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  actions: [{ text: 'Contact', href: '/#contact' }],
 };
 
 export const footerData = {
