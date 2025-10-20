@@ -5,7 +5,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Carousel from '~/components/widgets/Carousel.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import Content from '~/components/widgets/Content.astro'
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
   title: 'About us',
@@ -17,23 +17,27 @@ const metadata = {
     tagline=""
     image={{
       src: 'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769174/Landing-Carousel-13_tskml5.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&  q=100',
-      style: "transform: scale(0.9); display: block;",
+      style: 'transform: scale(0.9); display: block;',
       alt: 'Caos Image',
     }}
   >
     <Fragment slot="title"> Everything starts with an idea. </Fragment>
     <Fragment slot="subtitle">
-      At <strong><em>CRIS Construction Services</em></strong>, we understand how important your home is. That’s why we have a <b>professional team that pays close attention to every detail</b>, taking care of everything from <b>bathroom, kitchen, and drainpipe repairs to painting, flooring, patios, and more.</b> No matter the size of the project, if you need it, <b>we’ll do it — and we’ll do it right</b>, ensuring every job turns out exactly as you imagined.
+      At <strong><em>CRIS Construction Services</em></strong>, we understand how important your home is. That’s why we
+      have a <b>professional team that pays close attention to every detail</b>, taking care of everything from <b
+        >bathroom, kitchen, and drainpipe repairs to painting, flooring, patios, and more.</b
+      > No matter the size of the project, if you need it, <b>we’ll do it — and we’ll do it right</b>, ensuring every
+      job turns out exactly as you imagined.
     </Fragment>
   </Hero>
 
-    <Stats
+  <Stats
     title=""
     stats={[
-      { amount: '4+', title:'años de experiencia', icon: 'tabler:calendar-plus' },
-      { amount: '120+', title:'completed projects', icon: 'tabler:checkup-list' },
-      { amount: '98%', title:'customer satisfaction rate  ', icon: 'tabler:percentage-90' },
-      { amount: '30+', title:'skilled workers', icon: 'tabler:award' },
+      { amount: '4+', title: 'años de experiencia', icon: 'tabler:calendar-plus' },
+      { amount: '120+', title: 'completed projects', icon: 'tabler:checkup-list' },
+      { amount: '98%', title: 'customer satisfaction rate  ', icon: 'tabler:percentage-90' },
+      { amount: '30+', title: 'skilled workers', icon: 'tabler:award' },
     ]}
   />
 
@@ -123,7 +127,7 @@ const metadata = {
   </Content>
 
   <section class="text-center my-10 w-full items-center">
-    <Carousel 
+    <Carousel
       title="Our Projects"
       images={[
         'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769173/Landing-Carousel-1_ip7eyk.jpg',
@@ -139,7 +143,7 @@ const metadata = {
         'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769173/Landing-Carousel-11_tg76nx.jpg',
         'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769174/Landing-Carousel-12_enwtzh.jpg',
         'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769174/Landing-Carousel-13_tskml5.jpg',
-        'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769172/Landing-Carousel-14_cakqf1.jpg'
+        'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769172/Landing-Carousel-14_cakqf1.jpg',
       ]}
     />
   </section>
@@ -148,8 +152,8 @@ const metadata = {
     title="Words from our customers"
     testimonials={[
       {
-        title:`“Outstanding craftsmanship and attention to detail.”`,
-        testimonial:`CRIS Construction Services remodeled our entire kitchen and bathroom last summer, and the results were beyond our expectations. The team was punctual, respectful of our home, and constantly updated us throughout the process. Everything—from plumbing to finishing—was done with precision. I’ll definitely hire them again for future projects.`,
+        title: `“Outstanding craftsmanship and attention to detail.”`,
+        testimonial: `CRIS Construction Services remodeled our entire kitchen and bathroom last summer, and the results were beyond our expectations. The team was punctual, respectful of our home, and constantly updated us throughout the process. Everything—from plumbing to finishing—was done with precision. I’ll definitely hire them again for future projects.`,
         name: 'Maria L.',
         job: 'Homeowner',
         image: {
@@ -158,7 +162,7 @@ const metadata = {
         },
       },
       {
-        title:`“Reliable, fast, and transparent service.”`,
+        title: `“Reliable, fast, and transparent service.”`,
         testimonial: `We had an emergency pipe issue that flooded part of our store. CRIS Construction Services responded within 24 hours and handled everything efficiently. What I appreciated most was their transparency: they gave us a clear quote upfront and stuck to it. Thanks to them, our business was back up and running in no time.`,
         name: 'Daniel R.',
         job: 'Local Business Owner',
@@ -168,7 +172,7 @@ const metadata = {
         },
       },
       {
-        title:`“They turned our old patio into a beautiful family space.”`,
+        title: `“They turned our old patio into a beautiful family space.”`,
         testimonial: `CRIS Construction Services’ team redesigned our outdoor area, added new flooring, and repainted our walls. The result completely changed the look of our home. Their staff was polite, skilled, and genuinely cared about our satisfaction. Friends and family can’t stop complimenting the transformation!`,
         name: 'Sophia M.',
         job: 'Residential Client',
@@ -185,5 +189,4 @@ const metadata = {
       icon: 'tabler:chevron-right',
     }}
   />
-
 </Layout>
