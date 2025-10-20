@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getAsset} from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -57,35 +57,6 @@ export const headerData = {
       ],
     },
     {
-      text: 'Landing',
-      links: [
-        {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
-      ],
-    },
-    {
       text: 'Blog',
       links: [
         {
@@ -111,8 +82,37 @@ export const headerData = {
       ],
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'Home',
+      href: '/',
+    },
+    {
+      text: 'Services',
+      links: [
+        {
+          text: 'Service 1',
+          href: getPermalink(),
+        },
+        {
+          text: 'Service 2',
+          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+        },
+        {
+          text: 'Service 3',
+          href: getPermalink('markdown-elements-demo-post', 'post'),
+        },
+        {
+          text: 'Service 4',
+          href: getPermalink('tutorials', 'category'),
+        },
+        {
+          text: 'Service 5',
+          href: getPermalink('astro', 'tag'),
+        },
+      ],
+    },
+    {
+      text: 'Bulletin',
+      href: '/bulletin',
     },
     {
       text: 'About',
@@ -160,12 +160,7 @@ export const footerData = {
       title: 'Company',
       links: [
         { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'Bulletin', href: '/bulletin' },
       ],
     },
   ],

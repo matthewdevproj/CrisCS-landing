@@ -1,0 +1,108 @@
+---
+interface Props {
+  title?: string;
+  images: string[];
+  id?: string;
+}
+
+// Props con valores por defecto
+const {
+  title = 'Image Carousel',
+  images = [],
+  id = 'carousel-' + Math.random().toString(36).slice(2, 7),
+} = Astro.props;
+---
+
+<section class="text-center my-10 w-full items-center">
+  {title && <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">{title}</h2>}
+
+  <div id={id} class="relative w-11/12 md:w-3/4 lg:w-1/2 mx-auto" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      {
+        images.map((src, index) => (
+          <div
+            class={`hidden duration-700 ease-in-out bg-[#07091d] ${index === 0 ? 'block' : ''}`}
+            data-carousel-item={index === 0 ? 'active' : true}
+          >
+            <img
+              src={src}
+              class="absolute block object-contain w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt={`Slide ${index + 1}`}
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Indicators -->
+    <div
+      class="absolute z-30 flex items-center justify-center -translate-x-1/2 bottom-5 left-1/2 px-4 py-2 space-x-3 bg-gray-800/20 rounded-lg shadow-md backdrop-blur-sm rtl:space-x-reverse"
+    >
+      <div class="relative inset-0 flex items-center justify-center space-x-3">
+        {
+          images.map((_, i) => (
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current={i === 0 ? 'true' : 'false'}
+              aria-label={`Slide ${i + 1}`}
+              data-carousel-slide-to={i.toString()}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button
+      type="button"
+      class="absolute top-1/2 left-4 z-30 flex items-center justify-center w-10 h-10
+      -translate-y-1/2 cursor-pointer rounded-full bg-gray-800/50 shadow-md
+      backdrop-blur-sm transition duration-300 hover:bg-gray-700/70 focus:outline-none"
+      data-carousel-prev
+    >
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30
+        group-hover:bg-white-50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white
+        dark:group-focus:ring-gray-800/70 group-focus:outline-none hover:scale-105 transition-transform"
+      >
+        <svg
+          class="w-4 h-4 text-white dark:text-gray-500 rtl:rotate-180"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"
+          ></path>
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+
+    <button
+      type="button"
+      class="absolute top-1/2 right-4 z-30 flex items-center justify-center w-10 h-10
+      -translate-y-1/2 cursor-pointer rounded-full bg-gray-800/50 shadow-md
+      backdrop-blur-sm duration-300 hover:bg-gray-700/70 focus:outline-none hover:scale-105 transition-transform"
+      data-carousel-next
+    >
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30
+        group-hover:bg-white-50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white
+        dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+      >
+        <svg
+          class="w-4 h-4 text-white dark:text-gray-500 rtl:rotate-180"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"
+          ></path>
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+</section>
