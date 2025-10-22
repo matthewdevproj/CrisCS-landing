@@ -1,0 +1,250 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'General Maintenance Services - CRIS Construction Services',
+  description: 'Complete maintenance, repair, and renovation services for homes and businesses. Plumbing, electrical, painting, flooring, and more. Reliable, fast, and professional.',
+};
+
+const maintenanceServices = [
+  {
+    title: 'Plumbing & Drain Repairs',
+    description: 'Comprehensive plumbing solutions including leak repairs, drain cleaning, pipe replacement, and fixture installation.',
+    highlights: [
+      '24/7 emergency service',
+      'Leak detection & repair',
+      'Drain cleaning & unclogging',
+    ],
+  },
+  {
+    title: 'Electrical Services',
+    description: 'Safe and reliable electrical repairs, installations, and upgrades for residential and commercial properties.',
+    highlights: [
+      'Circuit breaker repairs',
+      'Lighting installation',
+      'Electrical safety inspections',
+    ],
+  },
+  {
+    title: 'Painting Services',
+    description: 'Professional interior and exterior painting with premium materials and flawless finishes.',
+    highlights: [
+      'Surface preparation',
+      'Color consultation',
+      'Clean, protected workspaces',
+    ],
+  },
+  {
+    title: 'Flooring Installation & Repair',
+    description: 'Expert installation and repair of hardwood, laminate, tile, and vinyl flooring.',
+    highlights: [
+      'Precision installation',
+      'Material guidance',
+      'Floor leveling & prep',
+    ],
+  },
+  {
+    title: 'Drywall & Plaster Work',
+    description: 'Professional drywall installation, repair, and finishing for smooth, seamless walls.',
+    highlights: [
+      'Patch & texture matching',
+      'Water damage repair',
+      'Smooth finishing',
+    ],
+  },
+  {
+    title: 'Carpentry & Woodwork',
+    description: 'Custom carpentry solutions including trim work, cabinetry, and structural repairs.',
+    highlights: [
+      'Custom millwork',
+      'Cabinet installation',
+      'Structural repairs',
+    ],
+  },
+  {
+    title: 'HVAC Maintenance',
+    description: 'Heating and cooling system maintenance, repair, and installation services.',
+    highlights: [
+      'System cleaning',
+      'Filter replacement',
+      'Efficiency optimization',
+    ],
+  },
+  {
+    title: 'Emergency Repairs',
+    description: '24/7 emergency response for urgent maintenance issues and property damage.',
+    highlights: [
+      'Rapid response team',
+      'Temporary solutions',
+      'Complete restoration',
+    ],
+  },
+];
+
+const renovationServices = [
+  {
+    title: 'Bathroom Remodeling',
+    description: 'Complete bathroom transformations with modern fixtures, tiling, and efficient layouts.',
+    highlights: [
+      'Layout optimization',
+      'Waterproofing',
+      'Ventilation systems',
+    ],
+  },
+  {
+    title: 'Kitchen Renovations',
+    description: 'Kitchen upgrades including cabinet installation, countertops, and appliance setup.',
+    highlights: [
+      'Custom cabinetry',
+      'Countertop installation',
+      'Appliance integration',
+    ],
+  },
+  {
+    title: 'Room Additions',
+    description: 'Professional room additions and space expansion with proper permits and construction.',
+    highlights: [
+      'Structural engineering',
+      'Permit acquisition',
+      'Seamless integration',
+    ],
+  },
+  {
+    title: 'Outdoor Living Spaces',
+    description: 'Patio, deck, and outdoor kitchen construction for enhanced outdoor living.',
+    highlights: [
+      'Weather-resistant materials',
+      'Proper drainage',
+      'Lighting integration',
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero2
+    tagline="Complete Property Care"
+    title="General Maintenance & <span class='text-slate-700 dark:text-slate-300'>Repair Services</span>"
+    subtitle="Professional maintenance, repair, and renovation services for homes and businesses. From emergency fixes to complete renovations, we deliver reliable solutions that stand the test of time."
+    actions={[
+      { 
+        variant: 'primary', 
+        text: 'Get Free Estimate', 
+        href: '#services', 
+        icon: 'tabler:arrow-down' 
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Professional construction worker performing maintenance',
+    }}
+  />
+
+  <!-- Maintenance Services Section -->
+  <CallToAction
+    id="services"
+    title="Comprehensive Maintenance Services"
+    subtitle="Professional repair and maintenance solutions to keep your property in optimal condition:"
+    services={maintenanceServices}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Schedule Service',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'Emergency Repair',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Emergency+repair+needed%2C+please+contact+me+immediately&type=phone_number&app_absent=0',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  />
+
+  <!-- Renovation Services Section -->
+  <Content
+    isAfterContent
+    isReversed
+    items={renovationServices}
+    image={{
+      src: 'https://images.unsplash.com/photo-1540518614846-7eded1024f50?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Beautiful kitchen renovation completed by CRIS Construction',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-3xl mb-4">Renovation & Remodeling Services</h3>
+      <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+        Transform your space with our expert renovation services. From kitchen and bathroom remodels to room additions, we bring your vision to life with quality craftsmanship and attention to detail.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Why Choose Us Section -->
+  <Content
+    items={[
+      {
+        title: 'Licensed & Insured',
+        description: 'Fully licensed, bonded, and insured for your peace of mind and protection.',
+        icon: 'tabler:license',
+      },
+      {
+        title: 'Quality Materials',
+        description: 'We use only premium materials from trusted suppliers for lasting results.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Timely Completion',
+        description: 'We respect your time and complete projects on schedule with minimal disruption.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Clean Workspace',
+        description: 'We maintain clean, organized workspaces and thorough cleanup after completion.',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Organized construction tools and materials',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-3xl mb-4">Why Choose CRIS Construction?</h3>
+      <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+        With years of experience and commitment to excellence, we deliver construction services you can trust. Our team combines skilled craftsmanship with professional service for outstanding results.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    id="contact"
+    title="Ready to Transform Your Space?"
+    subtitle="Contact us today for a free estimate and consultation. Let's discuss your project needs and create a solution that works for you."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Free Estimate',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Hello%2C+I+would+like+a+free+estimate+for+construction+services&type=phone_number&app_absent=0',
+        icon: 'tabler:calculator',
+      },
+      {
+        variant: 'secondary',
+        text: 'Call Us Now',
+        href: 'tel:+15712159461',
+        icon: 'tabler:phone',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Our Work',
+        href: '/blog',
+        icon: 'tabler:photo',
+      },
+    ]}
+  />
+</Layout>
