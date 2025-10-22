@@ -23,11 +23,13 @@ We collect information that helps us provide our services efficiently and improv
 The types of information we may collect include:
 
 ### **Personal Information**
+
 - Name, email address, and phone number (when you contact us or request a quote)
 - Company name and project details (if applicable)
 - Communication preferences
 
 ### **Automatically Collected Data**
+
 - IP address and browser type
 - Pages visited and time spent on our website
 - Device information and general location (city/state level only)
@@ -40,10 +42,10 @@ We do **not** collect sensitive personal information such as financial details, 
 
 We use the information we collect for the following purposes:
 
-- To respond to inquiries, quote requests, and service consultations  
-- To improve our website, marketing, and user experience  
-- To send updates, promotions, or company news (only if you opt-in)  
-- To comply with legal or regulatory obligations  
+- To respond to inquiries, quote requests, and service consultations
+- To improve our website, marketing, and user experience
+- To send updates, promotions, or company news (only if you opt-in)
+- To comply with legal or regulatory obligations
 
 We do not sell or rent your information to third parties.
 
@@ -53,9 +55,9 @@ We do not sell or rent your information to third parties.
 
 Our website uses **cookies** to enhance browsing performance and analyze traffic. Cookies allow us to:
 
-- Remember your preferences and improve navigation  
-- Understand which services attract the most interest  
-- Enhance performance and functionality  
+- Remember your preferences and improve navigation
+- Understand which services attract the most interest
+- Enhance performance and functionality
 
 You can adjust your browser settings to decline cookies. However, this may limit your ability to use certain parts of the site.
 
@@ -78,9 +80,9 @@ While no system is completely secure, we use encrypted connections (HTTPS) and s
 
 We may share your data in limited circumstances, such as:
 
-- With **trusted service providers** (e.g., hosting, email, or analytics tools) who assist us in running our website  
-- To **comply with legal obligations**, government requests, or to protect our legal rights  
-- With your **explicit consent**, for specific collaborations or marketing campaigns  
+- With **trusted service providers** (e.g., hosting, email, or analytics tools) who assist us in running our website
+- To **comply with legal obligations**, government requests, or to protect our legal rights
+- With your **explicit consent**, for specific collaborations or marketing campaigns
 
 We do not transfer personal data outside the United States without appropriate safeguards.
 
@@ -90,9 +92,9 @@ We do not transfer personal data outside the United States without appropriate s
 
 Depending on your jurisdiction, you may have the right to:
 
-- Access, correct, or delete your personal data  
-- Withdraw consent to receive marketing communications  
-- Request a copy of the information we hold about you  
+- Access, correct, or delete your personal data
+- Withdraw consent to receive marketing communications
+- Request a copy of the information we hold about you
 
 To exercise your rights, please contact us at **crisconstructionservices@gmail.com**.
 
@@ -130,5 +132,3 @@ If you have any questions about this Privacy Policy or how we handle your inform
 ---
 
 ©2025 CRIS Construction Services. All rights reserved.
-
-

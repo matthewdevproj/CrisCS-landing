@@ -18,24 +18,26 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- 🦺 Hero Section -->
-<Hero3>
+  <Hero3>
     <Fragment slot="title">
       DISCOVER OUR <span class="hidden xl:inline-block">PREMIUM</span>
-      <span class="text-slate-300 font-black"> CONSTRUCTION SERVICES</span> AND 
+      <span class="text-slate-300 font-black"> CONSTRUCTION SERVICES</span> AND
       <span class="text-slate-300 font-black"> EXPERT SOLUTIONS</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="text-lg md:text-xl lg:text-2xl text-slate-400 leading-relaxed">
-        <span class="font-bold text-slate-200">At CRIS Construction Services</span>, we specialize in comprehensive repairs, renovations, and complete maintenance for both residential and commercial properties.  
-        Our commitment is to deliver <span class="font-semibold text-slate-300">reliable, efficient, and lasting results</span> that exceed your expectations.
+        <span class="font-bold text-slate-200">At CRIS Construction Services</span>, we specialize in comprehensive
+        repairs, renovations, and complete maintenance for both residential and commercial properties. Our commitment is
+        to deliver <span class="font-semibold text-slate-300">reliable, efficient, and lasting results</span> that exceed
+        your expectations.
       </span>
     </Fragment>
   </Hero3>
 
   <!-- 🧱 Note Section -->
-  <NotePersonalizada 
-    title="CRIS Construction Services" 
+  <NotePersonalizada
+    title="CRIS Construction Services"
     description="Get in touch with our team of specialists in repairs, remodeling, and general maintenance. We deliver trusted, high-quality solutions that make your spaces safer and more beautiful."
   />
 
@@ -84,8 +86,7 @@ const metadata = {
       },
       {
         title: 'Custom Projects',
-        description:
-          'From small repairs to full renovations or expansions — we adapt to your needs and budget.',
+        description: 'From small repairs to full renovations or expansions — we adapt to your needs and budget.',
         icon: 'tabler:ruler',
       },
     ]}
@@ -121,8 +122,7 @@ const metadata = {
       },
       {
         title: 'Do you provide free estimates?',
-        description:
-          'Absolutely! Contact us and we’ll provide a no-obligation quote tailored to your project.',
+        description: 'Absolutely! Contact us and we’ll provide a no-obligation quote tailored to your project.',
         icon: 'tabler:calculator',
       },
       {
@@ -133,14 +133,12 @@ const metadata = {
       },
       {
         title: 'How can I contact you?',
-        description:
-          'Call or text us at +1 (571) 215-9461. We’re also available via WhatsApp for quick communication.',
+        description: 'Call or text us at +1 (571) 215-9461. We’re also available via WhatsApp for quick communication.',
         icon: 'tabler:phone',
       },
       {
         title: 'Do you include materials in your service?',
-        description:
-          'Yes, we can handle both materials and labor, or work with materials you provide — your choice.',
+        description: 'Yes, we can handle both materials and labor, or work with materials you provide — your choice.',
         icon: 'tabler:package',
       },
     ]}
@@ -175,14 +173,16 @@ const metadata = {
     title="Contact Our Team"
     subtitle="Let’s talk about your next project — we’re ready to bring your ideas to life."
   >
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contact Us on WhatsApp',
-        href: 'https://wa.me/15712159461',
-        target: '_blank',
-        icon: 'tabler:brand-whatsapp',
-      },
-    ]}
+    actions={
+      [
+        {
+          variant: 'primary',
+          text: 'Contact Us on WhatsApp',
+          href: 'https://wa.me/15712159461',
+          target: '_blank',
+          icon: 'tabler:brand-whatsapp',
+        },
+      ]
+    }
   </ContactForm>
 </Layout>

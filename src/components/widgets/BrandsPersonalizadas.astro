@@ -18,45 +18,47 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper
-  id={id}
-  isDark={isDark}
-  containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`}
-  bg={bg}
->
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
   <!-- Updated color design -->
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-9">
-    {icons && icons.map((icon) => (
-      <div
-        class="bg-gradient-to-b from-white to-[#F3F7FA] dark:from-slate-800 dark:to-slate-900
+    {
+      icons &&
+        icons.map((icon) => (
+          <div
+            class="bg-gradient-to-b from-white to-[#F3F7FA] dark:from-slate-800 dark:to-slate-900
                shadow-md rounded-xl p-6 flex items-center justify-center
                border border-[#004C91]/10 hover:border-[#E8B200]/60
                hover:shadow-lg hover:scale-105 transition-all duration-300"
-      >
-        <Icon name={icon} class="w-12 h-12 text-[#004C91] dark:text-[#E8B200]" />
-      </div>
-    ))}
+          >
+            <Icon name={icon} class="w-12 h-12 text-[#004C91] dark:text-[#E8B200]" />
+          </div>
+        ))
+    }
 
-    {images && images.map((image) =>
-      image.src && (
-        <div
-          class="bg-gradient-to-b from-white to-[#F7F9FB] dark:from-slate-800 dark:to-slate-900
+    {
+      images &&
+        images.map(
+          (image) =>
+            image.src && (
+              <div
+                class="bg-gradient-to-b from-white to-[#F7F9FB] dark:from-slate-800 dark:to-slate-900
                  shadow-md rounded-xl p-6 flex items-center justify-center
                  border border-[#004C91]/10 hover:border-[#E8B200]/60
                  hover:shadow-lg hover:scale-105 transition-all duration-300"
-        >
-          <Image
-            src={image.src}
-            alt={image.alt || ''}
-            class="max-h-12 filter grayscale hover:grayscale-0 transition duration-300"
-            width={120}
-            height={48}
-            layout="fixed"
-          />
-        </div>
-      )
-    )}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt || ''}
+                  class="max-h-12 filter grayscale hover:grayscale-0 transition duration-300"
+                  width={120}
+                  height={48}
+                  layout="fixed"
+                />
+              </div>
+            )
+        )
+    }
   </div>
 </WidgetWrapper>

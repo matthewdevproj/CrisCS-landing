@@ -60,7 +60,6 @@ export const headerData = {
       text: 'Blog',
       href: getBlogPermalink(),
     },
-    
   ],
 
   actions: [{ text: 'Contact Us', href: '/#contact' }],
@@ -116,7 +115,3 @@ export const footerData = {
     Designed and developed with ❤️ by <a class="text-blue-600 underline dark:text-muted" href="#">Ch'askode</a>.
   `,
 };
-
-
-
-

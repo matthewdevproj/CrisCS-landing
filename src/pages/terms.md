@@ -12,6 +12,7 @@ Please read these Terms and Conditions carefully before using our website or any
 ## 1. Interpretation and Definitions
 
 ### Interpretation
+
 Words with capitalized initial letters have meanings defined under the following conditions. The definitions below apply whether the terms appear in singular or plural.
 
 ### Definitions
@@ -70,10 +71,10 @@ Upon termination, your right to use the Service will cease immediately.
 
 To the fullest extent permitted by law, **CRIS Construction Services** and its employees, contractors, or affiliates shall not be liable for any indirect, incidental, or consequential damages resulting from:
 
-- Use or inability to use our website or services  
-- Errors, omissions, or inaccuracies in any content  
-- Unauthorized access or alterations to your data  
-- Any other matter related to your use of the Service  
+- Use or inability to use our website or services
+- Errors, omissions, or inaccuracies in any content
+- Unauthorized access or alterations to your data
+- Any other matter related to your use of the Service
 
 Our total liability shall not exceed **$100 USD** or the amount you paid (if any) for our services, whichever is greater.
 
@@ -86,9 +87,9 @@ Some jurisdictions do not allow certain exclusions, so these limitations may not
 The Service and its content are provided **“AS IS”** and **“AS AVAILABLE”**, without any warranties of any kind.  
 We do not guarantee that:
 
-- The website will be uninterrupted, error-free, or secure  
-- The information will always be accurate or complete  
-- The website or its content will be free of viruses or harmful components  
+- The website will be uninterrupted, error-free, or secure
+- The information will always be accurate or complete
+- The website or its content will be free of viruses or harmful components
 
 You use the Service at your own risk.
 
@@ -110,10 +111,12 @@ We will make reasonable efforts to resolve any disputes amicably before pursuing
 
 ## 10. Severability and Waiver
 
-### Severability  
+### Severability
+
 If any provision of these Terms is found to be invalid or unenforceable, that provision will be interpreted to fulfill its intended purpose, and the remaining provisions will remain in full effect.
 
-### Waiver  
+### Waiver
+
 Failure by the Company to enforce any provision of these Terms shall not be considered a waiver of its rights.
 
 ---
