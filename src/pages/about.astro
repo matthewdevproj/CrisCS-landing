@@ -2,6 +2,7 @@
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import Stats2 from '~/components/widgets/Statspersonalizadas.astro'
 import Layout from '~/layouts/PageLayout.astro';
 import Carousel from '~/components/widgets/Carousel.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
@@ -16,7 +17,7 @@ const metadata = {
   <Hero
     tagline=""
     image={{
-      src: 'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769174/Landing-Carousel-13_tskml5.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&  q=100',
+      src: 'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769172/Landing-Carousel-6_reqcru.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&  q=100',
       style: 'transform: scale(0.9); display: block;',
       alt: 'Caos Image',
     }}
@@ -31,15 +32,7 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <Stats
-    title=""
-    stats={[
-      { amount: '4+', title: 'años de experiencia', icon: 'tabler:calendar-plus' },
-      { amount: '120+', title: 'completed projects', icon: 'tabler:checkup-list' },
-      { amount: '98%', title: 'customer satisfaction rate  ', icon: 'tabler:percentage-90' },
-      { amount: '30+', title: 'skilled workers', icon: 'tabler:award' },
-    ]}
-  />
+  <Stats2 class="bg-slate-900 text-gray-100" />
 
   <Features2
     title="What services do we provide?"
