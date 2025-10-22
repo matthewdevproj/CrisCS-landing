@@ -210,7 +210,7 @@ apps:
 
     list:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      pathname: '/bulletin' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 
