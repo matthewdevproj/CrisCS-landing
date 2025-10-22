@@ -1,0 +1,95 @@
+<section id="stats" class="relative py-20 bg-gradient-to-r from-[#F7F9FB] via-white to-[#F7F9FB] dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+  <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+    <h2 class="text-4xl font-extrabold mb-6 text-[#004C91] dark:text-white">
+      Our Impact in Numbers
+    </h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-3xl mx-auto">
+      These figures reflect the <span class="text-[#E8B200] font-semibold">trust</span> of our clients
+      and the commitment of <span class="text-[#004C91] font-semibold">CRIS Construction Services</span> 
+      to <span class="text-[#E8B200] font-semibold">quality</span> and lasting results.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+      <!-- 1 -->
+      <div class="stat-item opacity-0 translate-y-6 transition-all duration-700 ease-out
+                  bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-md
+                  hover:shadow-xl hover:scale-105 transform p-8">
+        <span class="text-5xl font-extrabold text-[#004C91] counter" data-target="15">0</span>
+        <span class="text-5xl font-extrabold text-[#004C91]">+</span>
+        <p class="mt-3 text-gray-700 dark:text-gray-300">Years of Experience</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="stat-item opacity-0 translate-y-6 transition-all duration-700 ease-out
+                  bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-md
+                  hover:shadow-xl hover:scale-105 transform p-8">
+        <span class="text-5xl font-extrabold text-[#004C91] counter" data-target="250">0</span>
+        <span class="text-5xl font-extrabold text-[#004C91]">+</span>
+        <p class="mt-3 text-gray-700 dark:text-gray-300">Completed Projects</p>
+      </div>
+
+      <!-- 3 -->
+      <div class="stat-item opacity-0 translate-y-6 transition-all duration-700 ease-out
+                  bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-md
+                  hover:shadow-xl hover:scale-105 transform p-8">
+        <span class="text-5xl font-extrabold text-[#E8B200] counter" data-target="98">0</span>
+        <span class="text-3xl font-extrabold text-[#E8B200]">%</span>
+        <p class="mt-3 text-gray-700 dark:text-gray-300">Customer Satisfaction</p>
+      </div>
+
+      <!-- 4 -->
+      <div class="stat-item opacity-0 translate-y-6 transition-all duration-700 ease-out
+                  bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-md
+                  hover:shadow-xl hover:scale-105 transform p-8">
+        <span class="text-5xl font-extrabold text-[#004C91] counter" data-target="100">0</span>
+        <span class="text-3xl font-extrabold text-[#004C91]">%</span>
+        <p class="mt-3 text-gray-700 dark:text-gray-300">Commitment to Quality</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="absolute inset-0 bg-gradient-radial from-[#E8B200]/10 via-transparent to-transparent dark:from-[#E8B200]/5"></div>
+</section>
+
+<script is:inline>
+  function initStats() {
+    const counters = document.querySelectorAll('.counter');
+    const statItems = document.querySelectorAll('.stat-item');
+    const speed = 100;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = +counter.dataset.target;
+        let count = 0;
+        const step = () => {
+          count += Math.ceil(target / speed);
+          counter.textContent = count < target ? count : target;
+          if (count < target) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          statItems.forEach((item, i) => {
+            setTimeout(() => {
+              item.classList.replace('opacity-0', 'opacity-100');
+              item.classList.remove('translate-y-6');
+            }, i * 200);
+          });
+          animateCounters();
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(document.getElementById('stats'));
+  }
+
+  document.addEventListener('astro:after-swap', initStats);
+  initStats();
+</script>

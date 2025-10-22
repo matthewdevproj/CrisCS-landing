@@ -217,6 +217,7 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   content?: string;
   actions?: string | CallToAction[];
   image?: string | unknown;
+  bgImage?: string;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
@@ -234,6 +235,7 @@ export interface Pricing extends Omit<Headline, 'classes'>, Widget {
 export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   testimonials?: Array<Testimonial>;
   callToAction?: CallToAction;
+  expanded?: boolean;
 }
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {

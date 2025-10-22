@@ -3,164 +3,120 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Pages',
+      text: 'Home',
+      href: getPermalink('/.'),
+    },
+    {
+      text: 'About Us',
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
+          text: 'Our Company',
           href: getPermalink('/about'),
         },
         {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
+          text: 'Terms of Service',
           href: getPermalink('/terms'),
         },
         {
-          text: 'Privacy policy',
+          text: 'Privacy Policy',
           href: getPermalink('/privacy'),
         },
       ],
     },
     {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },
-    {
-      text: 'Home',
-      href: '/',
-    },
-    {
       text: 'Services',
       links: [
         {
-          text: 'Service 1',
-          href: getPermalink(),
+          text: 'General Maintenance',
+          href: getPermalink('/services/general-maintenance'),
         },
         {
-          text: 'Service 2',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'Plumbing & Drain Repairs',
+          href: getPermalink('/services/plumbing-repairs'),
         },
         {
-          text: 'Service 3',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
+          text: 'Bathroom & Kitchen Remodeling',
+          href: getPermalink('/services/remodeling'),
         },
         {
-          text: 'Service 4',
-          href: getPermalink('tutorials', 'category'),
+          text: 'Ceramic & Wood Flooring',
+          href: getPermalink('/services/flooring'),
         },
         {
-          text: 'Service 5',
-          href: getPermalink('astro', 'tag'),
+          text: 'Painting (Interior & Exterior)',
+          href: getPermalink('/services/painting'),
+        },
+        {
+          text: 'Concrete & Woodwork',
+          href: getPermalink('/services/concrete-woodwork'),
+        },
+        {
+          text: 'Custom Projects',
+          href: getPermalink('/services/custom-projects'),
         },
       ],
     },
     {
-      text: 'Bulletin',
-      href: '/bulletin',
-      links: [
-        {
-          text: 'Articles List',
-          href: getPermalink('/bulletin/articles-list'),
-        },
-      ],
+      text: 'Blog',
+      href: getBlogPermalink(),
     },
-    {
-      text: 'About',
-      href: '/about',
-    },
+    
   ],
-  actions: [{ text: 'Contact', href: '/#contact' }],
+
+  actions: [{ text: 'Contact Us', href: '/#contact' }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Our Services',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
-      ],
-    },
-    {
-      title: 'Platform',
-      links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'General Maintenance', href: getPermalink('/services/general-maintenance') },
+        { text: 'Plumbing & Drain Repairs', href: getPermalink('/services/plumbing-repairs') },
+        { text: 'Remodeling', href: getPermalink('/services/remodeling') },
+        { text: 'Flooring Installation', href: getPermalink('/services/flooring') },
+        { text: 'Painting Services', href: getPermalink('/services/painting') },
+        { text: 'Concrete & Woodwork', href: getPermalink('/services/concrete-woodwork') },
+        { text: 'Custom Projects', href: getPermalink('/services/custom-projects') },
       ],
     },
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Bulletin', href: '/bulletin' },
+        { text: 'About Us', href: getPermalink('/about') },
+        { text: 'Contact', href: getPermalink('/contact') },
+        { text: 'Blog', href: getBlogPermalink() },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        { text: 'FAQs', href: getPermalink('/#FAQS') },
+        { text: 'Request a Quote', href: getPermalink('#contact') },
+      ],
+    },
+    {
+      title: 'Legal',
+      links: [
+        { text: 'Terms of Service', href: getPermalink('/terms') },
+        { text: 'Privacy Policy', href: getPermalink('/privacy') },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
+    { text: 'Terms of Service', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
+    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/15712159461' },
+    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:crisconstructionservices@gmail.com' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
+    © ${new Date().getFullYear()} <strong>CRIS Construction Services</strong>. All rights reserved.  
+    Designed and developed with ❤️ by <a class="text-blue-600 underline dark:text-muted" href="#">Ch'askode</a>.
   `,
 };
+
+
+
+

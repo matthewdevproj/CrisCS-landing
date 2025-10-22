@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  description = await Astro.slots.render('description'),
+} = Astro.props;
+---
+
+<section
+  class="not-prose bg-[#F7F9FB] dark:bg-slate-800 border-t border-b border-[#E8B200]/30"
+>
+  <div
+    class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-center gap-2 text-center"
+  >
+    <span class="inline-block w-1 h-7 bg-[#E8B200] rounded-full"></span>
+    <p class="text-sm md:text-base text-gray-700 dark:text-gray-200 leading-snug">
+      <strong set:html={title} /> <span set:html={description} />
+    </p>
+  </div>
+</section>
+
