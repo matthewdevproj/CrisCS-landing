@@ -6,81 +6,52 @@ import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
   title: 'General Maintenance Services - CRIS Construction Services',
-  description: 'Complete maintenance, repair, and renovation services for homes and businesses. Plumbing, electrical, painting, flooring, and more. Reliable, fast, and professional.',
+  description:
+    'Complete maintenance, repair, and renovation services for homes and businesses. Plumbing, electrical, painting, flooring, and more. Reliable, fast, and professional.',
 };
 
 const maintenanceServices = [
   {
     title: 'Plumbing & Drain Repairs',
-    description: 'Comprehensive plumbing solutions including leak repairs, drain cleaning, pipe replacement, and fixture installation.',
-    highlights: [
-      '24/7 emergency service',
-      'Leak detection & repair',
-      'Drain cleaning & unclogging',
-    ],
+    description:
+      'Comprehensive plumbing solutions including leak repairs, drain cleaning, pipe replacement, and fixture installation.',
+    highlights: ['24/7 emergency service', 'Leak detection & repair', 'Drain cleaning & unclogging'],
   },
   {
     title: 'Electrical Services',
-    description: 'Safe and reliable electrical repairs, installations, and upgrades for residential and commercial properties.',
-    highlights: [
-      'Circuit breaker repairs',
-      'Lighting installation',
-      'Electrical safety inspections',
-    ],
+    description:
+      'Safe and reliable electrical repairs, installations, and upgrades for residential and commercial properties.',
+    highlights: ['Circuit breaker repairs', 'Lighting installation', 'Electrical safety inspections'],
   },
   {
     title: 'Painting Services',
     description: 'Professional interior and exterior painting with premium materials and flawless finishes.',
-    highlights: [
-      'Surface preparation',
-      'Color consultation',
-      'Clean, protected workspaces',
-    ],
+    highlights: ['Surface preparation', 'Color consultation', 'Clean, protected workspaces'],
   },
   {
     title: 'Flooring Installation & Repair',
     description: 'Expert installation and repair of hardwood, laminate, tile, and vinyl flooring.',
-    highlights: [
-      'Precision installation',
-      'Material guidance',
-      'Floor leveling & prep',
-    ],
+    highlights: ['Precision installation', 'Material guidance', 'Floor leveling & prep'],
   },
   {
     title: 'Drywall & Plaster Work',
     description: 'Professional drywall installation, repair, and finishing for smooth, seamless walls.',
-    highlights: [
-      'Patch & texture matching',
-      'Water damage repair',
-      'Smooth finishing',
-    ],
+    highlights: ['Patch & texture matching', 'Water damage repair', 'Smooth finishing'],
   },
   {
     title: 'Carpentry & Woodwork',
     description: 'Custom carpentry solutions including trim work, cabinetry, and structural repairs.',
-    highlights: [
-      'Custom millwork',
-      'Cabinet installation',
-      'Structural repairs',
-    ],
+    highlights: ['Custom millwork', 'Cabinet installation', 'Structural repairs'],
   },
   {
     title: 'HVAC Maintenance',
     description: 'Heating and cooling system maintenance, repair, and installation services.',
-    highlights: [
-      'System cleaning',
-      'Filter replacement',
-      'Efficiency optimization',
-    ],
+    highlights: ['System cleaning', 'Filter replacement', 'Efficiency optimization'],
   },
   {
     title: 'Emergency Repairs',
     description: '24/7 emergency response for urgent maintenance issues and property damage.',
-    highlights: [
-      'Rapid response team',
-      'Temporary solutions',
-      'Complete restoration',
-    ],
+    highlights: ['Rapid response team', 'Temporary solutions', 'Complete restoration'],
   },
 ];
 
@@ -88,38 +59,22 @@ const renovationServices = [
   {
     title: 'Bathroom Remodeling',
     description: 'Complete bathroom transformations with modern fixtures, tiling, and efficient layouts.',
-    highlights: [
-      'Layout optimization',
-      'Waterproofing',
-      'Ventilation systems',
-    ],
+    highlights: ['Layout optimization', 'Waterproofing', 'Ventilation systems'],
   },
   {
     title: 'Kitchen Renovations',
     description: 'Kitchen upgrades including cabinet installation, countertops, and appliance setup.',
-    highlights: [
-      'Custom cabinetry',
-      'Countertop installation',
-      'Appliance integration',
-    ],
+    highlights: ['Custom cabinetry', 'Countertop installation', 'Appliance integration'],
   },
   {
     title: 'Room Additions',
     description: 'Professional room additions and space expansion with proper permits and construction.',
-    highlights: [
-      'Structural engineering',
-      'Permit acquisition',
-      'Seamless integration',
-    ],
+    highlights: ['Structural engineering', 'Permit acquisition', 'Seamless integration'],
   },
   {
     title: 'Outdoor Living Spaces',
     description: 'Patio, deck, and outdoor kitchen construction for enhanced outdoor living.',
-    highlights: [
-      'Weather-resistant materials',
-      'Proper drainage',
-      'Lighting integration',
-    ],
+    highlights: ['Weather-resistant materials', 'Proper drainage', 'Lighting integration'],
   },
 ];
 ---
@@ -131,11 +86,11 @@ const renovationServices = [
     title="General Maintenance & <span class='text-slate-700 dark:text-slate-300'>Repair Services</span>"
     subtitle="Professional maintenance, repair, and renovation services for homes and businesses. From emergency fixes to complete renovations, we deliver reliable solutions that stand the test of time."
     actions={[
-      { 
-        variant: 'primary', 
-        text: 'Get Free Estimate', 
-        href: '#services', 
-        icon: 'tabler:arrow-down' 
+      {
+        variant: 'primary',
+        text: 'Get Free Estimate',
+        href: '#services',
+        icon: 'tabler:arrow-down',
       },
     ]}
     image={{
@@ -177,9 +132,12 @@ const renovationServices = [
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-3xl mb-4">Renovation & Remodeling Services</h3>
+      <h3 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-3xl mb-4">
+        Renovation & Remodeling Services
+      </h3>
       <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-        Transform your space with our expert renovation services. From kitchen and bathroom remodels to room additions, we bring your vision to life with quality craftsmanship and attention to detail.
+        Transform your space with our expert renovation services. From kitchen and bathroom remodels to room additions,
+        we bring your vision to life with quality craftsmanship and attention to detail.
       </p>
     </Fragment>
   </Content>
@@ -214,9 +172,12 @@ const renovationServices = [
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-3xl mb-4">Why Choose CRIS Construction?</h3>
+      <h3 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-3xl mb-4">
+        Why Choose CRIS Construction?
+      </h3>
       <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-        With years of experience and commitment to excellence, we deliver construction services you can trust. Our team combines skilled craftsmanship with professional service for outstanding results.
+        With years of experience and commitment to excellence, we deliver construction services you can trust. Our team
+        combines skilled craftsmanship with professional service for outstanding results.
       </p>
     </Fragment>
   </Content>

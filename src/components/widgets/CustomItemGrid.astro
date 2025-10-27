@@ -21,27 +21,33 @@ const { items, columns = 1, classes = {} } = Astro.props;
 ---
 
 <div class={`grid grid-cols-1 ${columns === 2 ? 'md:grid-cols-2' : ''} gap-8 ${classes.container || ''}`}>
-  {items.map((item, index) => (
-    <div class={`bg-white dark:bg-slate-800/50 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-600 ${classes.panel || ''}`}>
-      <div class="flex items-start gap-6">
-        <div class={`flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg ${classes.icon || ''}`}>
-          {item.icon ? (
-            <span class="text-xl">{item.icon}</span>
-          ) : (
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          )}
-        </div>
-        <div class="flex-1">
-          <h3 class={`text-xl font-semibold text-slate-800 dark:text-white mb-4 ${classes.title || ''}`}>
-            {item.title}
-          </h3>
-          <p class={`text-slate-600 dark:text-slate-400 text-base leading-relaxed ${classes.description || ''}`}>
-            {item.description}
-          </p>
+  {
+    items.map((item, index) => (
+      <div
+        class={`bg-white dark:bg-slate-800/50 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-600 ${classes.panel || ''}`}
+      >
+        <div class="flex items-start gap-6">
+          <div
+            class={`flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg ${classes.icon || ''}`}
+          >
+            {item.icon ? (
+              <span class="text-xl">{item.icon}</span>
+            ) : (
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            )}
+          </div>
+          <div class="flex-1">
+            <h3 class={`text-xl font-semibold text-slate-800 dark:text-white mb-4 ${classes.title || ''}`}>
+              {item.title}
+            </h3>
+            <p class={`text-slate-600 dark:text-slate-400 text-base leading-relaxed ${classes.description || ''}`}>
+              {item.description}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 </div>

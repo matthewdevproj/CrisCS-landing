@@ -57,18 +57,19 @@ const {
                   {index + 1}
                 </div>
                 <div class="flex-1">
-                  <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">
-                    {service.title}
-                  </h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
-                    {service.description}
-                  </p>
+                  <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">{service.title}</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">{service.description}</p>
                   {Array.isArray(service.highlights) && service.highlights.length > 0 && (
                     <ul class="space-y-1">
                       {service.highlights.map((point) => (
                         <li class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-                          <svg class="w-3 h-3 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          <svg
+                            class="w-3 h-3 text-slate-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                           </svg>
                           {point}
                         </li>
@@ -88,8 +89,8 @@ const {
         <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
           {Array.isArray(actions) ? (
             actions.map((action) => (
-              <Button 
-                {...(action || {})} 
+              <Button
+                {...(action || {})}
                 class="px-6 py-3 font-medium rounded-lg transition-all duration-300 hover:scale-105 min-w-[160px] border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"
               />
             ))

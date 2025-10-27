@@ -74,9 +74,17 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     button && (
       <div class="mt-4 flex justify-center ">
-        <Button variant="primary" id="contact-submit" type="submit" class="relative flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed min-w-[160px] min-h-[70px]">
+        <Button
+          variant="primary"
+          id="contact-submit"
+          type="submit"
+          class="relative flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed min-w-[160px] min-h-[70px]"
+        >
           <span id="contact-button-text">{button}</span>
-          <span id="contact-spinner" class="hidden animate-spin border-2 border-white border-t-transparent rounded-full w-4 h-4"></span>
+          <span
+            id="contact-spinner"
+            class="hidden animate-spin border-2 border-white border-t-transparent rounded-full w-4 h-4"
+          />
         </Button>
       </div>
     )
@@ -89,52 +97,53 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     )
   }
 </form>
-<div id="toast"
-  class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50">
+<div
+  id="toast"
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50"
+>
   Message sent.
 </div>
 
 <script>
-  const form = document.getElementById("contact-form") as HTMLFormElement | null;
-  const submitBtn = document.getElementById("contact-submit") as HTMLButtonElement | null;
-  const btnText = document.getElementById("contact-button-text") as HTMLSpanElement | null;
-  const spinner = document.getElementById("contact-spinner") as HTMLSpanElement | null;
-  const toast = document.getElementById("toast") as HTMLDivElement | null;
-  const disclaimer = document.getElementById("disclaimer") as HTMLInputElement | null;
-  
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement | null;
+  const btnText = document.getElementById('contact-button-text') as HTMLSpanElement | null;
+  const spinner = document.getElementById('contact-spinner') as HTMLSpanElement | null;
+  const toast = document.getElementById('toast') as HTMLDivElement | null;
+  const disclaimer = document.getElementById('disclaimer') as HTMLInputElement | null;
 
   if (form && submitBtn && btnText && spinner && toast) {
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       if (disclaimer && !disclaimer.checked) return;
 
       // Estado: enviando
       submitBtn.disabled = true;
-      btnText.classList.add("hidden");
-      spinner.classList.remove("hidden");
+      btnText.classList.add('hidden');
+      spinner.classList.remove('hidden');
 
       const formData = new FormData(form);
-      const res = await fetch("/api/send-email", {
-        method: "POST",
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
         body: formData,
       });
 
       // Restablecer estado
-      spinner.classList.add("hidden");
-      btnText.classList.remove("hidden");
+      spinner.classList.add('hidden');
+      btnText.classList.remove('hidden');
       submitBtn.disabled = false;
 
       if (res.ok) {
         form.reset();
 
         // Mostrar toast
-        toast.classList.remove("opacity-0");
-        toast.classList.add("translate-y-0");
+        toast.classList.remove('opacity-0');
+        toast.classList.add('translate-y-0');
 
         // Ocultar después de 4s
         setTimeout(() => {
-          toast.classList.add("opacity-0");
+          toast.classList.add('opacity-0');
         }, 4000);
       }
     });
@@ -142,9 +151,9 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
 </script>
 <style>
   #toast {
-  transform: translate(-50%, 20px);
-}
-#toast:not(.opacity-0) {
-  transform: translate(-50%, 0);
-}
+    transform: translate(-50%, 20px);
+  }
+  #toast:not(.opacity-0) {
+    transform: translate(-50%, 0);
+  }
 </style>
