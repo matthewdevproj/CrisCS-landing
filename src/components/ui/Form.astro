@@ -5,7 +5,7 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form>
+<form id="contact-form" method="POST" action="/api/send-email" class="space-y-4">
   {
     inputs &&
       inputs.map(
@@ -23,6 +23,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
+                required
                 class="py-2 px-2 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900
                 placeholder-gray-400 dark:placeholder-gray-600"
               />
@@ -42,6 +43,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
           name={textarea.name ? textarea.name : 'message'}
           rows={textarea.rows ? textarea.rows : 3}
           placeholder={textarea.placeholder}
+          required
           class="py-2 px-4 block w-full text-muted rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 placeholder-gray-400 dark:placeholder-gray-600"
         />
       </div>
@@ -56,6 +58,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
+            required
             class="cursor-pointer mt-1 py-3 px-4 w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900  text-blue-600"
           />
         </div>
@@ -71,13 +74,13 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     button && (
       <div class="mt-4 flex justify-center ">
-        <Button variant="primary" type="submit">
-          {button}
+        <Button variant="primary" id="contact-submit" type="submit" class="relative flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed min-w-[160px] min-h-[70px]">
+          <span id="contact-button-text">{button}</span>
+          <span id="contact-spinner" class="hidden animate-spin border-2 border-white border-t-transparent rounded-full w-4 h-4"></span>
         </Button>
       </div>
     )
   }
-
   {
     description && (
       <div class="mt-3 text-center">
@@ -86,3 +89,62 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     )
   }
 </form>
+<div id="toast"
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50">
+  Message sent.
+</div>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const submitBtn = document.getElementById("contact-submit") as HTMLButtonElement | null;
+  const btnText = document.getElementById("contact-button-text") as HTMLSpanElement | null;
+  const spinner = document.getElementById("contact-spinner") as HTMLSpanElement | null;
+  const toast = document.getElementById("toast") as HTMLDivElement | null;
+  const disclaimer = document.getElementById("disclaimer") as HTMLInputElement | null;
+  
+
+  if (form && submitBtn && btnText && spinner && toast) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (disclaimer && !disclaimer.checked) return;
+
+      // Estado: enviando
+      submitBtn.disabled = true;
+      btnText.classList.add("hidden");
+      spinner.classList.remove("hidden");
+
+      const formData = new FormData(form);
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        body: formData,
+      });
+
+      // Restablecer estado
+      spinner.classList.add("hidden");
+      btnText.classList.remove("hidden");
+      submitBtn.disabled = false;
+
+      if (res.ok) {
+        form.reset();
+
+        // Mostrar toast
+        toast.classList.remove("opacity-0");
+        toast.classList.add("translate-y-0");
+
+        // Ocultar después de 4s
+        setTimeout(() => {
+          toast.classList.add("opacity-0");
+        }, 4000);
+      }
+    });
+  }
+</script>
+<style>
+  #toast {
+  transform: translate(-50%, 20px);
+}
+#toast:not(.opacity-0) {
+  transform: translate(-50%, 0);
+}
+</style>
