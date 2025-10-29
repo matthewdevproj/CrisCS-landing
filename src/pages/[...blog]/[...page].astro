@@ -2,7 +2,7 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
-import BulletinList from '~/components/blog/List.astro';
+import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 // import PostTags from "~/components/blog/Tags.astro";
@@ -24,13 +24,13 @@ const currentPage = page.currentPage ?? 1;
 // const allTags = await findTags();
 
 const metadata = {
-  title: `Bulletin${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
   },
   openGraph: {
-    type: 'bulletin',
+    type: 'blog',
   },
 };
 ---
@@ -40,9 +40,9 @@ const metadata = {
     <Headline
       subtitle="Take a look at our completed projects. Explore how CRIS Construction Services transforms real spaces into functional, modern, and long-lasting environments. Each project showcases our commitment to quality, attention to detail, and customer satisfaction. Get inspired by some of our most recent work."
     >
-      The Bulletin
+      The Blog
     </Headline>
-    <BulletinList posts={page.data} />
+    <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     <!--
       <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />

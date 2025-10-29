@@ -10,7 +10,7 @@ export async function POST({ request }) {
   try {
     await resend.emails.send({
       from: 'Cris Construction Services <onboarding@resend.dev>',
-      to: 'pusaicocordovay@gmail.com',
+      to: 'crisconstructionservice@gmail.com',
       replyTo: email,
       subject: `Estimation request from ${name}`,
       html: `
