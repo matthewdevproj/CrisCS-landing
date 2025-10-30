@@ -1,37 +1,212 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Product Details Landing Page Demo',
+  title: 'Home Remodeling Services - CRIS Construction Services',
+  description:
+    'Complete home remodeling and renovation services. Kitchen remodels, bathroom renovations, room additions, and whole-house transformations with quality craftsmanship.',
 };
+
+const remodelingServices = [
+  {
+    title: 'Kitchen Remodeling',
+    description:
+      'Complete kitchen transformations with custom cabinets, countertops, and layouts.',
+    highlights: ['Layout optimization', 'Custom cabinetry', 'Appliance integration'],
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Bathroom Renovations',
+    description:
+      'Bathroom remodels with modern fixtures, tiling, and efficient layouts.',
+    highlights: ['Space planning', 'Waterproofing', 'Ventilation systems'],
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Room Additions',
+    description: 'Professional room additions and space expansion projects.',
+    highlights: ['Structural engineering', 'Seamless integration', 'Permit management'],
+    image: 'https://images.unsplash.com/photo-1540518614846-7eded1024f50?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Whole-House Remodels',
+    description: 'Complete home transformations and major renovations.',
+    highlights: ['Project management', 'Phased planning', 'Minimal disruption'],
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Basement Finishing',
+    description: 'Basement conversion into livable, functional spaces.',
+    highlights: ['Moisture control', 'Egress compliance', 'Multi-purpose design'],
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Outdoor Living',
+    description: 'Patio, deck, and outdoor kitchen construction.',
+    highlights: ['Weather-resistant materials', 'Entertainment features', 'Landscape integration'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+];
+
+const remodelingProcess = [
+  {
+    title: 'Consultation & Design',
+    description: 'Initial meeting to understand your vision and create plans.',
+    icon: 'tabler:clipboard'
+  },
+  {
+    title: 'Material Selection',
+    description: 'Choose finishes, fixtures, and materials that fit your style.',
+    icon: 'tabler:components'
+  },
+  {
+    title: 'Construction Phase',
+    description: 'Professional execution with quality craftsmanship.',
+    icon: 'tabler:tools'
+  },
+  {
+    title: 'Final Walkthrough',
+    description: 'Complete inspection and project handover.',
+    icon: 'tabler:checklist'
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero Section -->
   <Hero2
-    tagline="Áreas Contables"
-    title="Auditoría Financiera"
-    subtitle="Proveemos asesoría integral en todo el ciclo empresarial, desde la constitución hasta procesos de fusiones, escisiones y liquidaciones, complementando con consultoría en distintas áreas jurídicas para optimizar recursos, prevenir contingencias y resolver conflictos legales."
-    actions={[{ variant: 'primary', text: 'Ver Más', href: '#', icon: 'tabler:square-rounded-arrow-right' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1473188588951-666fce8e7c68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2174&q=80',
-      alt: 'A spotlight on a product. Product Details Landing Page Demo',
-    }}
-  />
-
-  <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    tagline="Transform Your Home"
+    title="Professional <span class='text-gray-800 dark:text-gray-200'>Remodeling Services</span>"
+    subtitle="Complete home remodeling and renovation services. From kitchen and bathroom updates to room additions and whole-house transformations, we bring your vision to life with quality craftsmanship."
     actions={[
       {
         variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        icon: 'tabler:download',
+        text: 'Start Your Remodel',
+        href: '#services',
+        icon: 'tabler:arrow-down',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Beautiful kitchen remodeling project',
+    }}
+  />
+
+  <!-- Remodeling Services Section -->
+  <CallToAction
+    id="services"
+    title="Comprehensive Remodeling Services"
+    subtitle="Transform your space with our expert remodeling solutions:"
+    services={remodelingServices}
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Schedule Consultation',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Portfolio',
+        href: '/blog',
+        icon: 'tabler:photo',
+      },
+    ]}
+  />
+
+  <!-- Remodeling Process Section -->
+  <Content
+    isAfterContent
+    isReversed
+    items={remodelingProcess}
+    image={{
+      src: 'https://images.unsplash.com/photo-1540518614846-7eded1024f50?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Architect working on remodeling plans',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Our Remodeling Process
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          We follow a structured process to ensure your remodeling project runs smoothly from start to finish. 
+          From initial design to final walkthrough, we maintain clear communication and attention to detail 
+          every step of the way.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Why Choose Us Section -->
+  <Content
+    items={[
+      {
+        title: 'Design Expertise',
+        description: 'Creative solutions that maximize space and functionality.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Quality Craftsmanship',
+        description: 'Superior workmanship in every aspect of your remodel.',
+        icon: 'tabler:ruler',
+      },
+      {
+        title: 'Project Management',
+        description: 'Dedicated coordination from concept to completion.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Client Collaboration',
+        description: 'We work closely with you throughout the entire process.',
+        icon: 'tabler:users',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Beautifully remodeled living space',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Choose Our Remodeling Services?
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Our remodeling team combines creative design with technical expertise to transform your space. 
+          We focus on quality, functionality, and aesthetics to deliver results that enhance your 
+          lifestyle and increase your property value.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    id="contact"
+    title="Ready to Transform Your Home?"
+    subtitle="Contact us for a free remodeling consultation. Let's discuss your vision and create a plan to bring your dream space to life."
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Get Free Consultation',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Hello%2C+I+would+like+a+free+remodeling+consultation&type=phone_number&app_absent=0',
+        icon: 'tabler:message',
+      },
+      {
+        variant: 'secondary',
+        text: 'Call Us Now',
+        href: 'tel:+15712159461',
+        icon: 'tabler:phone',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Remodeling Projects',
+        href: '/blog',
+        icon: 'tabler:photo',
       },
     ]}
   />

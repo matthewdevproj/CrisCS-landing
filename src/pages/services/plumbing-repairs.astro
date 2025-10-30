@@ -1,65 +1,76 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Asesoría y Auditoría Tributaria',
+  title: 'Plumbing Repairs & Services - CRIS Construction Services',
+  description:
+    'Professional plumbing repair, installation, and maintenance services. Emergency plumbing, drain cleaning, pipe replacement, and fixture installation for homes and businesses.',
 };
 
-const services = [
+const plumbingServices = [
   {
-    title: 'Auditoría Tributaria Preventiva',
+    title: 'Emergency Plumbing',
     description:
-      'Verificamos la correcta determinación de los impuestos a los que están afectas las empresas de forma preventiva, analizando las operaciones económicas registradas en la contabilidad según las normas tributarias vigentes.',
-    highlights: ['Evita reparos ante fiscalizaciones de SUNAT', 'Auditores en campo 1 o 2 veces al año'],
+      '24/7 emergency plumbing services for leaks, bursts, and urgent repairs.',
+    highlights: ['Rapid response', 'Temporary solutions', 'Permanent repairs'],
+    image: 'https://images.unsplash.com/photo-1628084599792-b43537a840c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'Gestión del Perfil de Cumplimiento',
+    title: 'Drain Cleaning',
     description:
-      'Auditoría preventiva y detallada del cumplimiento de tus obligaciones tributarias. Garantizamos alineamiento con las normas vigentes y preparamos tu empresa para fiscalizaciones de SUNAT.',
-    highlights: ['Evita contingencias fiscales', 'Protege tu reputación tributaria', 'Mejora tu calificación SUNAT'],
+      'Professional drain and sewer line cleaning, snaking, and hydro-jetting.',
+    highlights: ['Clog removal', 'Preventive maintenance', 'Camera inspection'],
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'Proyección del Impuesto a la Renta',
-    description:
-      'Ofrecemos proyecciones precisas y confiables con base en la legislación fiscal vigente, ayudándote a tomar decisiones financieras sólidas.',
-    highlights: ['Equipo con experiencia en normativa tributaria', 'Soporte experto en decisiones estratégicas'],
+    title: 'Pipe Repair & Replacement',
+    description: 'Expert pipe repair, replacement, and re-piping services.',
+    highlights: ['Leak detection', 'Pipe material expertise', 'Code compliance'],
+    image: 'https://images.unsplash.com/photo-1581093458791-8a6c6bc34fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'Outsourcing Tributario',
-    description:
-      'Nos encargamos de liquidar correctamente tus impuestos para que pagues lo que corresponde. Seguridad y tranquilidad fiscal para tu empresa.',
-    highlights: ['Cumplimiento normativo garantizado', 'Optimización del proceso tributario'],
+    title: 'Fixture Installation',
+    description: 'Professional installation of sinks, toilets, faucets, and showers.',
+    highlights: ['Proper sealing', 'Water efficiency', 'Aesthetic placement'],
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'Informe Técnico de Mermas',
-    description:
-      'Asegura la deducibilidad de tus costos productivos y evita sanciones con un informe técnico validado.',
-    highlights: ['Evita multas innecesarias', 'Cumplimiento tributario asegurado'],
+    title: 'Water Heater Services',
+    description: 'Water heater installation, repair, and maintenance.',
+    highlights: ['Tank & tankless options', 'Energy efficiency', 'Safety checks'],
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'Asesoría Tributaria Mensual',
-    description:
-      'Asesoría ilimitada por teléfono, correo o reuniones presenciales para resolver cualquier duda sobre tus operaciones empresariales.',
-    highlights: ['Consultas ilimitadas', 'Atención personalizada'],
+    title: 'Preventive Maintenance',
+    description: 'Regular plumbing inspections and preventive care.',
+    highlights: ['System assessment', 'Early problem detection', 'Cost savings'],
+    image: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+];
+
+const plumbingBenefits = [
+  {
+    title: '24/7 Emergency',
+    description: 'Round-the-clock service for urgent plumbing issues.',
+    icon: 'tabler:alert-triangle'
   },
   {
-    title: 'Revisión Tributaria Mensual',
-    description: 'Revisamos tus liquidaciones mensuales con un equipo especializado 100% dedicado a tu empresa.',
-    highlights: ['Prevención de errores en tus declaraciones', 'Auditores en campo todos los meses'],
+    title: 'Licensed Professionals',
+    description: 'Fully licensed and insured plumbing technicians.',
+    icon: 'tabler:license'
   },
   {
-    title: 'Apoyo en Fiscalización o Verificación SUNAT',
-    description:
-      'Diseñamos estrategias fiscales para afrontar auditorías con éxito. Analizamos tu documentación y te acompañamos en todo el proceso.',
-    highlights: [
-      'Presencia de auditores con previa coordinación',
-      'Acompañamiento en todo el proceso SUNAT',
-      'Respuestas técnicas a requerimientos',
-    ],
+    title: 'Modern Equipment',
+    description: 'State-of-the-art tools for efficient and precise work.',
+    icon: 'tabler:tools'
+  },
+  {
+    title: 'Warranty Protection',
+    description: 'Guaranteed workmanship and parts warranty.',
+    icon: 'tabler:shield-check'
   },
 ];
 ---
@@ -67,68 +78,136 @@ const services = [
 <Layout metadata={metadata}>
   <!-- Hero Section -->
   <Hero2
-    tagline="Áreas Contables"
-    title="Asesoría y Auditoría Tributaria"
-    subtitle="Prevenga contingencias tributarias, gestione de manera eficiente los recursos de su empresa y elabore un plan tributario con nuestro servicio especializado y personalizado. Contamos con diferentes planes diseñados para adaptarse a las necesidades de su negocio."
-    actions={[
-      { variant: 'primary', text: 'Ver Más', href: '#call-to-action', icon: 'tabler:square-rounded-arrow-right' },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1597423498219-04418210827d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
-      alt: 'Magnet attracting screws. Lead generation landing page demo',
-    }}
-  />
-
-  <!-- Call to Action Section -->
-  <CallToAction
-    id="call-to-action"
-    title="Conoce nuestros servicios de Asesoría y Auditoría Tributaria"
-    subtitle="Evite contingencias tributarias, optimice los recursos de su empresa y desarrolle un plan tributario con nuestra atención especializada y personalizada. Tenemos el plan adecuado para su empresa:"
-    services={services}
+    tagline="Reliable Water Solutions"
+    title="Professional <span class='text-gray-800 dark:text-gray-200'>Plumbing Services</span>"
+    subtitle="Expert plumbing repair, installation, and maintenance services. From emergency leaks to routine maintenance, we provide reliable solutions to keep your water systems flowing smoothly."
     actions={[
       {
         variant: 'primary',
-        text: 'Contáctanos por WhatsApp',
-        href: 'https://wa.me/51933167550?text=Hola%2C%20quisiera%20más%20información%20sobre%20sus%20servicios%20tributarios',
-        icon: 'tabler:message-circle',
-      },
-    ]}
-  />
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Quality',
-        description:
-          'Whether it’s a small repair or a full renovation, we treat every job with the same level of excellence.',
-        icon: 'tabler:rosette-discount-check',
-      },
-      {
-        title: 'Efficiency',
-        description:
-          'Time matters — both yours and ours. Our teams are organized, punctual, and efficient, ensuring that every project stays on schedule without cutting corners.',
-        icon: 'tabler:clock-star',
-      },
-      {
-        title: 'Transparency',
-        description:
-          'We believe in honesty from start to finish. Our quotes are detailed, our timelines are realistic, and our communication is open throughout the entire process.',
-        icon: 'tabler:book',
-      },
-      {
-        title: 'Trust & Professionalism',
-        description:
-          'Your home or business is important, and we respect that. All our technicians and builders are certified, insured, and trained to maintain the highest professional standards.',
-        icon: 'tabler:heart-handshake',
+        text: 'Get Plumbing Help',
+        href: '#services',
+        icon: 'tabler:arrow-down',
       },
     ]}
     image={{
-      src: 'https://res.cloudinary.com/dpofrsdix/image/upload/v1760769173/Landing-Carousel-5_vffqzm.jpg',
-      alt: 'Worker Image',
+      src: 'https://images.unsplash.com/photo-1628084599792-b43537a840c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Professional plumber working on pipes',
+    }}
+  />
+
+  <!-- Plumbing Services Section -->
+  <CallToAction
+    id="services"
+    title="Comprehensive Plumbing Services"
+    subtitle="Professional plumbing solutions for every need:"
+    services={plumbingServices}
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Schedule Service',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'Emergency Repair',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Emergency+plumbing+repair+needed%2C+please+contact+me+immediately&type=phone_number&app_absent=0',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  />
+
+  <!-- Plumbing Benefits Section -->
+  <Content
+    isAfterContent
+    isReversed
+    items={plumbingBenefits}
+    image={{
+      src: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Modern plumbing tools and equipment',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Choose Professional Plumbing?
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Professional plumbing services ensure your water systems operate safely and efficiently. 
+          From preventing water damage to improving water quality, expert plumbing care protects 
+          your property and provides peace of mind.
+        </p>
+      </div>
     </Fragment>
   </Content>
+
+  <!-- Why Choose Us Section -->
+  <Content
+    items={[
+      {
+        title: 'Expert Diagnosis',
+        description: 'Accurate problem identification and effective solutions.',
+        icon: 'tabler:microscope',
+      },
+      {
+        title: 'Quality Materials',
+        description: 'Durable pipes, fixtures, and components that last.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Code Compliance',
+        description: 'All work meets local plumbing codes and standards.',
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'Clean Work',
+        description: 'Minimal mess and thorough cleanup after service.',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581093458791-8a6c6bc34fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Plumber demonstrating quality workmanship',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Choose Our Plumbing Services?
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Our licensed plumbers combine technical expertise with quality craftsmanship to deliver 
+          reliable plumbing solutions. We prioritize your safety and satisfaction while ensuring 
+          long-lasting results for your plumbing systems.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    id="contact"
+    title="Need Plumbing Help?"
+    subtitle="Contact us for immediate plumbing assistance or schedule preventive maintenance. We're here to keep your water systems running smoothly."
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Get Free Estimate',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Hello%2C+I+would+like+a+free+plumbing+estimate&type=phone_number&app_absent=0',
+        icon: 'tabler:calculator',
+      },
+      {
+        variant: 'secondary',
+        text: 'Emergency Call',
+        href: 'tel:+15712159461',
+        icon: 'tabler:phone',
+      },
+      {
+        variant: 'secondary',
+        text: 'Schedule Maintenance',
+        href: '#services',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  />
 </Layout>

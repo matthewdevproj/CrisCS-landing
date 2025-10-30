@@ -1,37 +1,211 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Sales Landing Page Demo',
+  title: 'Custom Construction Projects - CRIS Construction Services',
+  description:
+    'Bespoke construction solutions tailored to your unique vision. From custom homes to specialty renovations, we bring your dream projects to life.',
 };
+
+const customProjectServices = [
+  {
+    title: 'Custom Home Building',
+    description:
+      'Complete custom home construction from design to completion, tailored to your lifestyle.',
+    highlights: ['Architect collaboration', 'Custom layouts', 'Personalized finishes'],
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Specialty Renovations',
+    description:
+      'Unique renovation projects including historical restorations and specialty spaces.',
+    highlights: ['Historical accuracy', 'Specialty materials', 'Custom solutions'],
+    image: 'https://images.unsplash.com/photo-1540518614846-7eded1024f50?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Commercial Build-outs',
+    description: 'Custom commercial space construction and tenant improvements.',
+    highlights: ['Business needs analysis', 'Code compliance', 'Brand integration'],
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Outdoor Living Spaces',
+    description: 'Custom patios, outdoor kitchens, and landscape construction.',
+    highlights: ['Seamless integration', 'Durable materials', 'Entertainment features'],
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Architectural Details',
+    description: 'Custom architectural features and specialty installations.',
+    highlights: ['Design collaboration', 'Precision execution', 'Unique features'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Project Management',
+    description: 'Complete project coordination from concept to completion.',
+    highlights: ['Single point of contact', 'Timeline management', 'Quality control'],
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+];
+
+const processSteps = [
+  {
+    title: 'Consultation & Design',
+    description: 'We listen to your vision and create detailed plans.',
+    icon: 'tabler:clipboard'
+  },
+  {
+    title: 'Material Selection',
+    description: 'Choose from quality materials that match your style and budget.',
+    icon: 'tabler:components'
+  },
+  {
+    title: 'Expert Execution',
+    description: 'Our skilled team brings your project to life with precision.',
+    icon: 'tabler:tools'
+  },
+  {
+    title: 'Final Review',
+    description: 'We ensure every detail meets our quality standards.',
+    icon: 'tabler:checklist'
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero Section -->
   <Hero2
-    tagline="Áreas Contables"
-    title="Servicios Contables y de Planillas"
-    subtitle="Gestionamos la contabilidad y las planillas de su empresa de manera eficiente, ya sea bajo la modalidad InHouse o mediante Outsourcing, respaldados por nuestro equipo de especialistas tributarios, contables y laborales, garantizando siempre la confidencialidad de la información."
-    actions={[{ variant: 'primary', text: 'Ver Más', href: '#', icon: 'tabler:square-rounded-arrow-right' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1626&q=80',
-      alt: 'Children telling a story. Long-form Sales Landing Page demo',
-    }}
-  />
-
-  <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    tagline="Bespoke Construction"
+    title="Custom <span class='text-gray-800 dark:text-gray-200'>Project Solutions</span>"
+    subtitle="Turn your unique vision into reality with our custom construction services. From dream homes to specialty commercial spaces, we handle projects of all sizes with creativity and expertise."
     actions={[
       {
         variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        icon: 'tabler:download',
+        text: 'Start Your Project',
+        href: '#services',
+        icon: 'tabler:arrow-down',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Beautiful custom home construction project',
+    }}
+  />
+
+  <!-- Custom Projects Section -->
+  <CallToAction
+    id="services"
+    title="Custom Project Services"
+    subtitle="Specialized construction solutions for unique projects:"
+    services={customProjectServices}
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Schedule Consultation',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Portfolio',
+        href: '/blog',
+        icon: 'tabler:photo',
+      },
+    ]}
+  />
+
+  <!-- Process Section -->
+  <Content
+    isAfterContent
+    isReversed
+    items={processSteps}
+    image={{
+      src: 'https://images.unsplash.com/photo-1540518614846-7eded1024f50?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Architect working on custom project plans',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Our Custom Project Process
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          We follow a detailed process to ensure your custom project exceeds expectations. From initial concept 
+          to final walkthrough, we maintain clear communication and attention to detail every step of the way.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Why Choose Us Section -->
+  <Content
+    items={[
+      {
+        title: 'Creative Solutions',
+        description: 'Innovative approaches to bring unique visions to life.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Quality Craftsmanship',
+        description: 'Superior workmanship in every detail of your project.',
+        icon: 'tabler:sparkles',
+      },
+      {
+        title: 'Project Management',
+        description: 'Dedicated project coordination from start to finish.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Client Collaboration',
+        description: 'We work closely with you throughout the entire process.',
+        icon: 'tabler:users',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Team collaboration on custom project',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Choose Us for Custom Projects?
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Our team specializes in unique, one-of-a-kind projects that require creative problem-solving 
+          and exceptional craftsmanship. We thrive on challenges and take pride in delivering results 
+          that perfectly match our clients vision.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    id="contact"
+    title="Ready to Create Something Unique?"
+    subtitle="Let's discuss your custom project ideas. We'll provide creative solutions and a comprehensive plan to bring your vision to life."
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Start Consultation',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Hello%2C+I+have+a+custom+project+idea+I+would+like+to+discuss&type=phone_number&app_absent=0',
+        icon: 'tabler:message',
+      },
+      {
+        variant: 'secondary',
+        text: 'Call Us Now',
+        href: 'tel:+15712159461',
+        icon: 'tabler:phone',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Custom Projects',
+        href: '/blog',
+        icon: 'tabler:photo',
       },
     ]}
   />

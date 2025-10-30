@@ -1,37 +1,212 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Subscription Landing Page Demo',
+  title: 'Flooring Installation & Repair - CRIS Construction Services',
+  description:
+    'Professional flooring installation, repair, and refinishing services. Hardwood, laminate, tile, vinyl, and carpet flooring solutions for homes and businesses.',
 };
+
+const flooringServices = [
+  {
+    title: 'Hardwood Flooring',
+    description:
+      'Beautiful hardwood floor installation, refinishing, and repair services.',
+    highlights: ['Solid & engineered options', 'Professional finishing', 'Durability'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Tile Installation',
+    description:
+      'Ceramic, porcelain, and natural stone tile installation for all areas.',
+    highlights: ['Precision cutting', 'Proper sealing', 'Pattern designs'],
+    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Laminate & Vinyl',
+    description: 'Durable and affordable laminate and luxury vinyl plank flooring.',
+    highlights: ['Water-resistant options', 'Easy maintenance', 'Realistic finishes'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Carpet Installation',
+    description: 'Professional carpet installation with various styles and padding options.',
+    highlights: ['Proper stretching', 'Seam hiding', 'Quality padding'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Floor Repair',
+    description: 'Expert repair services for damaged or worn flooring.',
+    highlights: ['Squeak elimination', 'Board replacement', 'Surface restoration'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Subfloor Preparation',
+    description: 'Proper subfloor leveling and preparation for perfect installations.',
+    highlights: ['Moisture testing', 'Leveling compounds', 'Structural repairs'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+];
+
+const flooringTypes = [
+  {
+    title: 'Hardwood',
+    description: 'Classic beauty with long-lasting durability and value.',
+    icon: 'tabler:tree'
+  },
+  {
+    title: 'Tile & Stone',
+    description: 'Durable and water-resistant options for any room.',
+    icon: 'tabler:square'
+  },
+  {
+    title: 'Luxury Vinyl',
+    description: 'Waterproof and realistic alternatives to natural materials.',
+    icon: 'tabler:layout'
+  },
+  {
+    title: 'Carpet',
+    description: 'Comfortable and warm flooring with sound absorption.',
+    icon: 'tabler:square-rounded' // Cambiado de 'tabler:carpet'
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero Section -->
   <Hero2
-    tagline="Áreas Contables"
-    title="Capacitaciones a la medida In-House"
-    subtitle="Ofrecemos capacitaciones in-house impartidas por especialistas de primer nivel, diseñadas a la medida de las necesidades de cada organización."
-    actions={[{ variant: 'primary', text: 'Ver Más', href: '#', icon: 'tabler:square-rounded-arrow-right' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1593510987046-1f8fcfc512a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Ironic image associated with canceling a subscription. Subscription Landing Page Demo',
-    }}
-  />
-
-  <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    tagline="Foundation of Your Space"
+    title="Professional <span class='text-gray-800 dark:text-gray-200'>Flooring Services</span>"
+    subtitle="Expert flooring installation, repair, and refinishing services. Transform your space with beautiful, durable flooring solutions tailored to your style and needs."
     actions={[
       {
         variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        icon: 'tabler:download',
+        text: 'Get Flooring Quote',
+        href: '#services',
+        icon: 'tabler:arrow-down',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Beautiful hardwood flooring installation',
+    }}
+  />
+
+  <!-- Flooring Services Section -->
+  <CallToAction
+    id="services"
+    title="Comprehensive Flooring Services"
+    subtitle="Professional flooring solutions for every need:"
+    services={flooringServices}
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Schedule Installation',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'Emergency Repair',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Flooring+repair+needed%2C+please+contact+me+immediately&type=phone_number&app_absent=0',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  />
+
+  <!-- Flooring Types Section -->
+  <Content
+    isAfterContent
+    isReversed
+    items={flooringTypes}
+    image={{
+      src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Various flooring material samples',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Flooring Options & Materials
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          We offer a wide range of flooring materials to suit every style, budget, and lifestyle. 
+          From classic hardwood to modern luxury vinyl, we'll help you choose the perfect flooring 
+          for your space.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Why Choose Us Section -->
+  <Content
+    items={[
+      {
+        title: 'Expert Installation',
+        description: 'Precision installation techniques for flawless results.',
+        icon: 'tabler:ruler',
+      },
+      {
+        title: 'Quality Materials',
+        description: 'Premium flooring products from trusted manufacturers.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Proper Preparation',
+        description: 'Thorough subfloor preparation for long-lasting floors.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Clean Process',
+        description: 'Minimal disruption and thorough cleanup after installation.',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Professional flooring installation in progress',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Choose Our Flooring Services?
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          With years of experience in all types of flooring installation and repair, we deliver 
+          results that combine beauty with functionality. Our attention to detail ensures your 
+          new floors will look amazing and stand the test of time.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    id="contact"
+    title="Ready for New Floors?"
+    subtitle="Contact us for a free flooring consultation and estimate. We'll help you choose the perfect flooring and provide professional installation."
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Get Free Estimate',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Hello%2C+I+would+like+a+free+flooring+estimate&type=phone_number&app_absent=0',
+        icon: 'tabler:calculator',
+      },
+      {
+        variant: 'secondary',
+        text: 'Call Us Now',
+        href: 'tel:+15712159461',
+        icon: 'tabler:phone',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Flooring Options',
+        href: '/blog',
+        icon: 'tabler:photo',
       },
     ]}
   />

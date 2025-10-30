@@ -1,37 +1,214 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Subscription Landing Page Demo',
+  title: 'Concrete & Woodwork Services - CRIS Construction Services',
+  description:
+    'Expert concrete work and custom woodwork solutions. Driveways, patios, foundations, custom carpentry, and structural woodwork for residential and commercial projects.',
 };
+
+const concreteServices = [
+  {
+    title: 'Concrete Foundations',
+    description:
+      'Professional concrete foundation installation and repair for new construction and existing structures.',
+    highlights: ['Structural integrity', 'Proper curing', 'Code compliance'],
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Driveways & Patios',
+    description:
+      'Beautiful and durable concrete driveways, patios, and walkways with various finishing options.',
+    highlights: ['Decorative finishes', 'Proper drainage', 'Long-lasting durability'],
+    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Concrete Repair',
+    description: 'Expert concrete crack repair, leveling, and restoration services.',
+    highlights: ['Crack sealing', 'Surface leveling', 'Structural repairs'],
+    image: 'https://images.unsplash.com/photo-1571289868393-d89cefd0d8e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Custom Carpentry',
+    description: 'Custom woodwork including trim, molding, and architectural details.',
+    highlights: ['Precision cutting', 'Custom designs', 'Quality finishes'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Structural Woodwork',
+    description: 'Structural framing, beam installation, and load-bearing woodwork.',
+    highlights: ['Load calculations', 'Beam installation', 'Safety compliance'],
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Deck Construction',
+    description: 'Custom deck building with various materials and design options.',
+    highlights: ['Material selection', 'Structural design', 'Safety features'],
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+];
+
+const woodworkServices = [
+  {
+    title: 'Custom Cabinetry',
+    description: 'Handcrafted cabinets for kitchens, bathrooms, and storage solutions.',
+    highlights: ['Custom sizing', 'Quality materials', 'Professional installation'],
+    icon: 'tabler:archive'
+  },
+  {
+    title: 'Trim & Molding',
+    description: 'Elegant trim work and molding installation for finished interiors.',
+    highlights: ['Precision cutting', 'Seamless joints', 'Multiple styles'],
+    icon: 'tabler:frame' 
+  },
+  {
+    title: 'Stair Construction',
+    description: 'Custom stair building and renovation with various materials.',
+    highlights: ['Safety compliance', 'Custom designs', 'Quality craftsmanship'],
+    icon: 'tabler:stairs' 
+  },
+  {
+    title: 'Furniture Building',
+    description: 'Custom furniture pieces built to your specifications.',
+    highlights: ['Unique designs', 'Durable construction', 'Fine finishes'],
+    icon: 'tabler:sofa' 
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero Section -->
   <Hero2
-    tagline="Áreas Contables"
-    title="Otros Servicios"
-    subtitle="Ofrecemos soluciones integrales en facturación y libros electrónicos, mediante una plataforma avanzada que cumple con los requisitos de la SUNAT y facilita una transición eficiente hacia el sistema electrónico. Nuestro servicio especializado no solo garantiza la correcta estructura exigida, sino también la coherencia de los datos para minimizar observaciones de la Administración Tributaria. Además, brindamos soporte en Estudios Técnicos de Precios de Transferencia, asegurando cumplimiento normativo y eficiencia tributaria."
-    actions={[{ variant: 'primary', text: 'Ver Más', href: '#', icon: 'tabler:square-rounded-arrow-right' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1593510987046-1f8fcfc512a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Ironic image associated with canceling a subscription. Subscription Landing Page Demo',
-    }}
-  />
-
-  <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    tagline="Structural Excellence"
+    title="Concrete & <span class='text-gray-800 dark:text-gray-200'>Woodwork Services</span>"
+    subtitle="Professional concrete work and custom woodwork solutions. From foundations and driveways to custom carpentry and structural woodwork, we deliver durable and beautiful results."
     actions={[
       {
         variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        icon: 'tabler:download',
+        text: 'Get Free Estimate',
+        href: '#services',
+        icon: 'tabler:arrow-down',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Professional concrete work in progress',
+    }}
+  />
+
+  <!-- Concrete Services Section -->
+  <CallToAction
+    id="services"
+    title="Comprehensive Concrete Services"
+    subtitle="Expert concrete solutions for residential and commercial projects:"
+    services={concreteServices}
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Schedule Service',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'Emergency Repair',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Concrete+repair+needed%2C+please+contact+me+immediately&type=phone_number&app_absent=0',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  />
+
+  <!-- Woodwork Services Section -->
+  <Content
+    isAfterContent
+    isReversed
+    items={woodworkServices}
+    image={{
+      src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Custom woodwork and carpentry project',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Custom Woodwork & Carpentry
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Transform your space with our expert woodwork services. From custom cabinetry and trim work to structural 
+          woodwork and deck construction, we bring precision and artistry to every project.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Why Choose Us Section -->
+  <Content
+    items={[
+      {
+        title: 'Material Expertise',
+        description: 'Knowledge of various concrete mixes and wood species for optimal results.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Precision Craftsmanship',
+        description: 'Attention to detail in every cut, pour, and finish.',
+        icon: 'tabler:ruler',
+      },
+      {
+        title: 'Structural Integrity',
+        description: 'Focus on safety and long-term durability in all projects.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Custom Solutions',
+        description: 'Tailored approaches to meet your specific needs and vision.',
+        icon: 'tabler:tools',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Professional craftsman working on wood project',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Choose Our Concrete & Woodwork Services?
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          With years of experience in both concrete work and custom woodwork, we combine structural expertise 
+          with artistic craftsmanship to deliver projects that are both beautiful and built to last.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    id="contact"
+    title="Ready to Build Your Vision?"
+    subtitle="Contact us today to discuss your concrete or woodwork project. We'll provide expert guidance and a detailed estimate."
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Get Free Estimate',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Hello%2C+I+would+like+a+free+estimate+for+concrete+or+woodwork+services&type=phone_number&app_absent=0',
+        icon: 'tabler:calculator',
+      },
+      {
+        variant: 'secondary',
+        text: 'Call Us Now',
+        href: 'tel:+15712159461',
+        icon: 'tabler:phone',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Our Projects',
+        href: '/blog',
+        icon: 'tabler:photo',
       },
     ]}
   />

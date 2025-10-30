@@ -1,37 +1,212 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Pre-Launch Landing Page',
+  title: 'Professional Painting Services - CRIS Construction Services',
+  description:
+    'Expert interior and exterior painting services. Residential and commercial painting with premium materials and flawless finishes. Transform your space with professional painting.',
 };
+
+const paintingServices = [
+  {
+    title: 'Interior Painting',
+    description:
+      'Complete interior painting services with careful preparation and clean finishes.',
+    highlights: ['Surface preparation', 'Color consultation', 'Clean workspaces'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Exterior Painting',
+    description:
+      'Professional exterior painting with weather-resistant coatings and proper surface prep.',
+    highlights: ['Surface cleaning', 'Caulking & repairs', 'Weather protection'],
+    image: 'https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Commercial Painting',
+    description: 'Efficient commercial painting for offices, retail spaces, and facilities.',
+    highlights: ['Minimal disruption', 'Durable finishes', 'After-hours options'],
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Cabinet Painting',
+    description: 'Professional cabinet refinishing and painting for kitchens and bathrooms.',
+    highlights: ['Proper prep', 'Durable finishes', 'Hardware installation'],
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Decorative Finishes',
+    description: 'Specialty finishes including faux painting and accent walls.',
+    highlights: ['Custom techniques', 'Color blending', 'Unique effects'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Surface Preparation',
+    description: 'Essential prep work including patching, sanding, and priming.',
+    highlights: ['Wall repair', 'Smoothing surfaces', 'Stain blocking'],
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  },
+];
+
+const paintingBenefits = [
+  {
+    title: 'Color Consultation',
+    description: 'Expert advice on color selection and combinations.',
+    icon: 'tabler:palette'
+  },
+  {
+    title: 'Premium Materials',
+    description: 'High-quality paints and tools for lasting results.',
+    icon: 'tabler:brush'
+  },
+  {
+    title: 'Clean Process',
+    description: 'Thorough protection and cleanup of your space.',
+    icon: 'tabler:sparkles'
+  },
+  {
+    title: 'Warranty',
+    description: 'Quality guarantee on all our painting work.',
+    icon: 'tabler:shield-check'
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero Section -->
   <Hero2
-    tagline="Áreas Contables"
-    title="Consultoría en NIIF"
-    subtitle="Entendemos que la adecuada adopción y aplicación de las Normas Internacionales de Información Financiera (NIIF) es clave para impulsar el crecimiento y garantizar la transparencia financiera de tu empresa. Contamos con un equipo de contadores, tributaristas y abogados altamente calificados, preparados para brindarte soluciones especializadas en NIIF."
-    actions={[{ variant: 'primary', text: 'Ver Más', href: '#', icon: 'tabler:square-rounded-arrow-right' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1558803116-c1b4ac867b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-      alt: 'Store with a Coming Soon sign. Pre-launch Landing Page',
-    }}
-  />
-
-  <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    tagline="Transform Your Space"
+    title="Professional <span class='text-gray-800 dark:text-gray-200'>Painting Services</span>"
+    subtitle="Expert interior and exterior painting with premium materials and flawless finishes. Refresh your space with professional painting that enhances beauty and protects surfaces."
     actions={[
       {
         variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        icon: 'tabler:download',
+        text: 'Get Painting Quote',
+        href: '#services',
+        icon: 'tabler:arrow-down',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Professional painter working on interior space',
+    }}
+  />
+
+  <!-- Painting Services Section -->
+  <CallToAction
+    id="services"
+    title="Comprehensive Painting Services"
+    subtitle="Professional painting solutions for every surface:"
+    services={paintingServices}
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Schedule Painting',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'Color Consultation',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=I+need+color+consultation+for+my+painting+project&type=phone_number&app_absent=0',
+        icon: 'tabler:palette',
+      },
+    ]}
+  />
+
+  <!-- Painting Benefits Section -->
+  <Content
+    isAfterContent
+    isReversed
+    items={paintingBenefits}
+    image={{
+      src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Beautifully painted interior room',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Professional Painting Matters
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Professional painting goes beyond just applying color. Proper surface preparation, 
+          quality materials, and expert techniques ensure beautiful, long-lasting results that 
+          protect your surfaces and enhance your space value.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Why Choose Us Section -->
+  <Content
+    items={[
+      {
+        title: 'Surface Expertise',
+        description: 'Knowledge of proper preparation for different surfaces.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Color Knowledge',
+        description: 'Expert guidance on color selection and combinations.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Clean Process',
+        description: 'Meticulous protection and cleanup of your space.',
+        icon: 'tabler:sparkles',
+      },
+      {
+        title: 'Quality Results',
+        description: 'Flawless finishes that stand the test of time.',
+        icon: 'tabler:checklist',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+      alt: 'Professional painter demonstrating quality work',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          Why Choose Our Painting Services?
+        </h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Our painting team combines artistic skill with technical expertise to deliver 
+          exceptional results. We focus on every detail from surface preparation to final 
+          cleanup, ensuring your painting project exceeds expectations.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    id="contact"
+    title="Ready to Refresh Your Space?"
+    subtitle="Contact us for a free painting consultation and estimate. We'll help you choose the perfect colors and provide professional painting services."
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Get Free Estimate',
+        href: 'https://api.whatsapp.com/send/?phone=15712159461&text=Hello%2C+I+would+like+a+free+painting+estimate&type=phone_number&app_absent=0',
+        icon: 'tabler:calculator',
+      },
+      {
+        variant: 'secondary',
+        text: 'Call Us Now',
+        href: 'tel:+15712159461',
+        icon: 'tabler:phone',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Painting Projects',
+        href: '/blog',
+        icon: 'tabler:photo',
       },
     ]}
   />
